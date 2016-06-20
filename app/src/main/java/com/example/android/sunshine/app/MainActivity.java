@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -70,7 +72,8 @@ public class MainActivity extends ActionBarActivity {
             fakeData.add("Sat - Sunny - 76/68");
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast, R.id.list_item_forecast_textview, fakeData);
-
+            ListView mainListView = (ListView) rootView.findViewById(R.id.listview_forecast);
+            mainListView.setAdapter(adapter);
             return rootView;
         }
     }
